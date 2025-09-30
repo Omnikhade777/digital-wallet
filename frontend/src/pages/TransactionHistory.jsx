@@ -17,14 +17,9 @@ export const TransactionHistory = () => {
   return (
     <div
       className={
-        // Center when tx list is hidden, shove left when shown
         `flex min-h-screen bg-gray-100 transition-all duration-300` +
-        (showTx ? " justify-start" : " justify-center")
-      }
-    >
-      {/* ---------- Profile Card ---------- */}
+        (showTx ? " justify-start" : " justify-center") } >
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md m-4">
-        {/* Avatar */}
         <div className="w-20 h-20 bg-slate-900 text-white text-4xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">
           {initial}
         </div>
@@ -49,8 +44,6 @@ export const TransactionHistory = () => {
             </div>
           ))}
         </div>
-
-        {/* Button */}
         <button
           onClick={() => setShowTx(!showTx)}
           className="w-full py-2 mt-6 bg-black hover:bg-slate-800 text-white rounded-md transition-colors"
