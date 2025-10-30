@@ -4,7 +4,6 @@ import { Appbar } from "../components/Appbar";
 import { Balance } from "../components/Balance";
 import { Users } from "../components/Users";
 import { useLocation } from "react-router-dom";
-import { BACKEND_URL } from "../config";
 
 export const Dashboard = () => {
   const [balance, setBalance] = useState("");  
@@ -18,7 +17,7 @@ export const Dashboard = () => {
     const fetchBalance = async () => {
      
         const { data } = await axios.get(
-          `${BACKEND_URL}/app/v1/account/balance`,
+          "http://localhost:3000/app/v1/account/balance",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),

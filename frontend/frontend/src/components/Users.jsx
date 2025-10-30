@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BACKEND_URL } from "../config";
 
 const User = ({ user, onDelete }) => {
   const navigate = useNavigate();
@@ -57,7 +56,7 @@ export const Users = () => {
     const timeout = setTimeout(() => {
       const fetchUsers = async () => {
         const { data } = await axios.get(
-          `${BACKEND_URL}/app/v1/user/bulk?filter=` + filter
+          "http://localhost:3000/app/v1/user/bulk?filter=" + filter
         );
         setUsers(data.user);
       };

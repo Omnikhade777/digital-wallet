@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BACKEND_URL } from "../config";
 
 export const Update = () => {
   const [firstName, setFirstName] = useState("");
@@ -28,7 +27,7 @@ export const Update = () => {
 
     try {
       await axios.put(
-        `${BACKEND_URL}/app/v1/user/update`,  
+        "http://localhost:3000/app/v1/user/update",  
         payload,
         { headers: { Authorization: `Bearer ${token}` } }
       );

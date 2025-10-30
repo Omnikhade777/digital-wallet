@@ -6,7 +6,6 @@ import { Heading } from "../components/Heading";
 import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import axios from "axios";
-import { BACKEND_URL } from "../config";
 export const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -17,10 +16,10 @@ export const Signup = () => {
   const handleSignup = async () => {
     try {
       setstate(true);
-      const response = await axios.post(`${BACKEND_URL}/app/v1/user/signup`, {
+      const response = await axios.post("http://localhost:3000/app/v1/user/signup", {
      username,
      firstName,
-      lastName,
+   lastName,
       password,
       });
       
@@ -34,7 +33,7 @@ navigate("/dashboard", {
 ;
 
     } catch (error) {
-     console.error("Signup failed:", error);
+      console.error("Signup failed:", error);
     
     }
   };

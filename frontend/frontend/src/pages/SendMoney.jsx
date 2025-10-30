@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-import { BACKEND_URL } from "../config";
 
 
 export const SendMoney = () => {
@@ -48,7 +47,7 @@ const navigate=useNavigate();
                             <button
                                onClick={async()=>{
                                 setstate(true);
-                                await axios.post(`${BACKEND_URL}/app/v1/account/transfer`,{
+                                await axios.post("http://localhost:3000/app/v1/account/transfer",{
                                     to:id,
                                     amount
                                 },{

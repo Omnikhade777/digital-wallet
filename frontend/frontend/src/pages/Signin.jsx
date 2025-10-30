@@ -6,7 +6,6 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { BACKEND_URL } from "../config"
 
 export const Signin = () => {
   const [username1,setusername1]=useState("");
@@ -15,7 +14,7 @@ export const Signin = () => {
   const navigate=useNavigate();
   const handelsumbit=async()=>{
    setstate(true);
- const response= await axios.post(`${BACKEND_URL}/app/v1/user/signin`,{
+ const response= await axios.post("http://localhost:3000/app/v1/user/signin",{
  username:username1,
  password 
 });

@@ -9,7 +9,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { SendMoney } from "./pages/SendMoney";
 import { Home } from "./pages/Home";
 import { Update } from "./pages/Update";
-import Protectpages from "./components/Protectpages";
+import { Protectpages } from "./components/protectpages";
 import { TransactionHistory } from "./pages/TransactionHistory";
 
 
